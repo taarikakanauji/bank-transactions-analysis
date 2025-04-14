@@ -1,0 +1,229 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
+  "name": "6077df59335e948559e2",
+  "displayName": "Transaction Details",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c00e91db69ad4d7249ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Transaction Type"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "dbb89441ffbe462931d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Fraud Flag"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "bank transaction_data",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "Fraud Flag"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'FALSE'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "8d52a1c87218fb9271cc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Transaction Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "cb793b7bff29d669422d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Bandwidth Group"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "23996bc51e0fa3240946",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Network Slice ID"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "42290624dd227f6448ab",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "1118794fada5c2c5ae71",
+        "boundFilter": "c00e91db69ad4d7249ab",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Transaction Type"
+          }
+        }
+      },
+      {
+        "name": "71ef77b2a878cfe17d6b",
+        "boundFilter": "dbb89441ffbe462931d0",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Fraud Flag"
+          }
+        }
+      },
+      {
+        "name": "70b58af282913765fce3",
+        "boundFilter": "8d52a1c87218fb9271cc",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Transaction Status"
+          }
+        }
+      },
+      {
+        "name": "a420f7eacc626f2134b7",
+        "boundFilter": "cb793b7bff29d669422d",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Bandwidth Group"
+          }
+        }
+      },
+      {
+        "name": "cec84d5bd3b6663be565",
+        "boundFilter": "23996bc51e0fa3240946",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bank transaction_data"
+              }
+            },
+            "Property": "Network Slice ID"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F2F2F2'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "type": "Drillthrough"
+}

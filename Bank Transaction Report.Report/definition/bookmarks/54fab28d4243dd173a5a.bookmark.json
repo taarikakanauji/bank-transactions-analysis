@@ -1,0 +1,502 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.2.0/schema.json",
+  "displayName": "Reset Filters -Home",
+  "name": "54fab28d4243dd173a5a",
+  "options": {
+    "targetVisualNames": [],
+    "suppressActiveSection": true,
+    "suppressDisplay": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "a7cfcca843612ba35588",
+    "sections": {
+      "a7cfcca843612ba35588": {
+        "visualContainers": {
+          "4d337c319c61d5ce599d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "418607b8d192a86ce2d1": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "ec1cec52b00edbe01180": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f450f525146111bf0f86": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Total Transactions"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "652a223afd96bf38a2c9": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Total Transaction Amount"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "3b536e038d7229848fd7": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a44bed06421bc28dd4e3": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Total Transactions"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Fraud Flag"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c27d5a7de0a1a9c76329": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Total Transactions"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Transaction Type"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "69cdd93287ab0f6a671a": {
+            "singleVisual": {
+              "visualType": "map",
+              "objects": {}
+            }
+          },
+          "394d32857285dbd25c92": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Network Slice ID"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "659b65ad1ad280de9c4b": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Device Used"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "bc5b981cb2bdd253076d": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Transaction Status"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "86198911e892e9893ff5": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Transaction Type"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "cbdaab0b45ee303e6247": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "6477c20e5204f56b7afa": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
+          "8bfe6f7ebd179cf219fe": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Success Transaction (%)"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "9eebedd5a26318ef29a2": {
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Failed Transactions(%)"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "f6a89484ef3401f719a3": {
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Device Used"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Device Used"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d881fc656d292ec8f60f": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f06826fe5c1828bbe57e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "087eb452b8de0cf555f9": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Total Transactions"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank transaction_data"
+                        }
+                      },
+                      "Property": "Latency Group"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

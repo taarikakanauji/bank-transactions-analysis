@@ -1,0 +1,22 @@
+model Model
+	culture: en-CA
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["bank transaction_data"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.141.1558.0 (25.03)+75b5f06a991f8f8a8a4d6b6fcd0f66e1ec2d6fdc
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'bank transaction_data'
+ref table DateTableTemplate_6ac4362f-2a19-4909-8000-4d05ab41544c
+ref table LocalDateTable_91255651-657b-4ab8-8593-87dec93302a7
+
+ref cultureInfo en-CA
+

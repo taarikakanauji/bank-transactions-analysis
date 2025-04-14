@@ -1,0 +1,261 @@
+table 'bank transaction_data'
+	lineageTag: 42d81f52-9960-4b15-a46a-2dcd502740b5
+
+	measure 'Total Transactions' =
+			
+			DISTINCTCOUNT('bank transaction_data'[Transaction ID])
+		formatString: #,0
+		lineageTag: 340f2e01-ec41-4857-aa5e-943d86ea8329
+
+	measure 'Total Transaction Amount' = SUM('bank transaction_data'[Transaction Amount])
+		lineageTag: 2db8a7cc-2e32-4956-b79b-726d6f7c7407
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Success Transaction (%)' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNT('bank transaction_data'[Transaction Status]), 'bank transaction_data'[Transaction Status] = "Success"
+			    ),
+			    COUNT('bank transaction_data'[Transaction Status])
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 20f58363-906f-4e0a-9767-446c60d771bb
+
+	measure 'Failed Transactions(%)' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNT('bank transaction_data'[Transaction Status]), 'bank transaction_data'[Transaction Status] = "Failed"
+			    ),
+			    COUNT('bank transaction_data'[Transaction Status])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d309caf5-37d7-4465-8eec-d9c2d922532a
+
+	column 'Transaction ID'
+		dataType: string
+		lineageTag: 4ab9c013-e463-4e1d-a0a5-c7266eb5fa0c
+		summarizeBy: none
+		sourceColumn: Transaction ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sender Account ID'
+		dataType: string
+		lineageTag: 3fc59bb6-4185-41c0-a24c-4d151530ee38
+		summarizeBy: none
+		sourceColumn: Sender Account ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Receiver Account ID'
+		dataType: string
+		lineageTag: 9baf0b69-9d9b-4687-8095-59163758513e
+		summarizeBy: none
+		sourceColumn: Receiver Account ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Amount'
+		dataType: double
+		lineageTag: 4177a0ef-7c25-4306-807b-7b90dd82bd80
+		summarizeBy: sum
+		sourceColumn: Transaction Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: d899d52e-e0f1-4b10-a470-349ae99f94e4
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 795fca2e-029c-4222-9205-ef2b8be3d163
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		variation Variation
+			isDefault
+			relationship: 1f18197f-97ed-4420-b5fd-e42dd3148aff
+			defaultHierarchy: LocalDateTable_91255651-657b-4ab8-8593-87dec93302a7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Transaction Status'
+		dataType: string
+		lineageTag: 9d5c39a5-3b7e-4155-954d-a8e7c7f105b1
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fraud Flag'
+		dataType: string
+		lineageTag: d87a6ba5-f061-49ba-931b-aa3d5913cb1b
+		summarizeBy: none
+		sourceColumn: Fraud Flag
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latitude value'
+		dataType: double
+		lineageTag: 4a34173d-5cb9-4fd5-a4f9-4c150affe53a
+		dataCategory: Latitude
+		summarizeBy: sum
+		sourceColumn: Latitude value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Latitude sign'
+		dataType: string
+		lineageTag: f2d94947-15ce-4268-ac43-b72ae76b3276
+		summarizeBy: none
+		sourceColumn: Latitude sign
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Longitude value'
+		dataType: double
+		lineageTag: 9328eb17-f3b8-4269-adb6-361732730264
+		dataCategory: Longitude
+		summarizeBy: sum
+		sourceColumn: Longitude value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Longitude sign'
+		dataType: string
+		lineageTag: db1c1212-8e26-4992-8f8b-0821924f2e8f
+		summarizeBy: none
+		sourceColumn: Longitude sign
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Device Used'
+		dataType: string
+		lineageTag: f096136d-fa0c-4605-800d-8defe813d6c2
+		summarizeBy: none
+		sourceColumn: Device Used
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Network Slice ID'
+		dataType: string
+		lineageTag: 229f7c79-0e06-4b59-a405-9d2304cea357
+		summarizeBy: none
+		sourceColumn: Network Slice ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latency (ms)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b0297e6-6370-4433-9de2-3d7ffdc656d9
+		summarizeBy: sum
+		sourceColumn: Latency (ms)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Slice Bandwidth (Mbps)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 68fdcbc4-1170-43c5-8a21-e9799c316583
+		summarizeBy: sum
+		sourceColumn: Slice Bandwidth (Mbps)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PIN Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: e108cfcc-dce5-45c0-aa1a-e6830a35485a
+		summarizeBy: count
+		sourceColumn: PIN Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: acb42c5c-c932-4085-9030-e0ac8c98c1c4
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Bandwidth Group' =
+			
+			SWITCH(
+			    TRUE(),
+			    'bank transaction_data'[Slice Bandwidth (Mbps)] >= 50 && 'bank transaction_data'[Slice Bandwidth (Mbps)] <100, "50-100 Mbps",
+			    'bank transaction_data'[Slice Bandwidth (Mbps)] >=100 && 'bank transaction_data'[Slice Bandwidth (Mbps)] <150, "100-150 Mbps",
+			    'bank transaction_data'[Slice Bandwidth (Mbps)] >=150 && 'bank transaction_data'[Slice Bandwidth (Mbps)] <=250, "150-250 Mbps",
+			    "Out of Range"
+			)
+		lineageTag: 4967d72d-3615-43f4-84c7-071046e396a1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latency Group' =
+			
+			SWITCH(
+			    TRUE(),
+			    'bank transaction_data'[Latency (ms)] <10, "0-10 (ms)",
+			    'bank transaction_data'[Latency (ms)] >=10 && 'bank transaction_data'[Latency (ms)] <15, "10-15 (ms)",
+			    'bank transaction_data'[Latency (ms)] >=15 && 'bank transaction_data'[Latency (ms)] <=20, "15-20 (ms)",
+			    "Out of Range"
+			)
+		lineageTag: c1c8a3da-0dc2-417f-975f-c05e6b5c9636
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bank transaction_data' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("E:\PORTFOLIO\POWER BI\Bank Transaction Report\Dataset\bank transaction_data.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Transaction ID", type text}, {"Sender Account ID", type text}, {"Receiver Account ID", type text}, {"Transaction Amount", type number}, {"Transaction Type", type text}, {"Timestamp", type datetime}, {"Transaction Status", type text}, {"Fraud Flag", type logical}, {"Geolocation (Latitude/Longitude)", type text}, {"Device Used", type text}, {"Network Slice ID", type text}, {"Latency (ms)", Int64.Type}, {"Slice Bandwidth (Mbps)", Int64.Type}, {"PIN Code", Int64.Type}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type", "Geolocation (Latitude/Longitude)", Splitter.SplitTextByEachDelimiter({","}, QuoteStyle.Csv, false), {"Geolocation (Latitude/Longitude).1", "Geolocation (Latitude/Longitude).2"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Geolocation (Latitude/Longitude).1", type text}, {"Geolocation (Latitude/Longitude).2", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Geolocation (Latitude/Longitude).1", "Latitude"}, {"Geolocation (Latitude/Longitude).2", "Longitude"}}),
+				    #"Split Column by Delimiter1" = Table.SplitColumn(#"Renamed Columns", "Latitude", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Latitude.1", "Latitude.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter1",{{"Latitude.1", type number}, {"Latitude.2", type text}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type2",{{"Latitude.1", "Latitude value"}, {"Latitude.2", "Latitude sign"}}),
+				    #"Split Column by Delimiter2" = Table.SplitColumn(#"Renamed Columns1", "Longitude", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Longitude.1", "Longitude.2", "Longitude.3"}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Split Column by Delimiter2",{{"Longitude.1", type text}, {"Longitude.2", type number}, {"Longitude.3", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type3",{"Longitude.1"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Removed Columns",{{"Longitude.2", "Longitude value"}, {"Longitude.3", "Longitude sign"}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Renamed Columns2", "Timestamp", "Timestamp - Copy"),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Duplicated Column",{{"Timestamp - Copy", type time}}),
+				    #"Renamed Columns3" = Table.RenameColumns(#"Changed Type4",{{"Timestamp - Copy", "Time"}}),
+				    #"Changed Type5" = Table.TransformColumnTypes(#"Renamed Columns3",{{"Timestamp", type date}}),
+				    #"Renamed Columns4" = Table.RenameColumns(#"Changed Type5",{{"Timestamp", "Transaction Date"}})
+				in
+				    #"Renamed Columns4"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

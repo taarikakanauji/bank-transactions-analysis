@@ -1,0 +1,5 @@
+relationship 1f18197f-97ed-4420-b5fd-e42dd3148aff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'bank transaction_data'.'Transaction Date'
+	toColumn: LocalDateTable_91255651-657b-4ab8-8593-87dec93302a7.Date
+
