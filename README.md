@@ -252,8 +252,6 @@ Analyze granular transaction data to detect fraud patterns in real-time, focusin
 
 This page will show a tabular view of the transactions, including fields such as Transaction ID, Sender Account ID, Receiver Account ID, Transaction Type and many more. This offers a more technical and detailed view of each transaction.
 
-[Insert Transaction Details page view image here]
-
 **Insights**
 
 (a)150–250 Mbps Bandwidth Dominates Fraud
@@ -294,9 +292,6 @@ This page will show a tabular view of the transactions, including fields such as
 
 ### **Power BI Service Demo**  
 [Power BI Service Demo (MKV)](https://github.com/taarikakanauji/bank-transactions-analysis/blob/main/Power-Service-Demo.mkv)  
-
-### **Dataset Folder**  
-[Dataset Files](https://github.com/taarikakanauji/bank-transactions-analysis/tree/main/Dataset)  
 
 ### **PBIP Files**  
 - **Report:** [Report Files](https://github.com/taarikakanauji/bank-transactions-analysis/tree/main/Bank%20Transaction%20Report.Report)  
