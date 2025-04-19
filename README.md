@@ -195,7 +195,7 @@ As a Business Analyst for a leading banking organization, I was tasked with deve
 # Fraud Detection Page
 
 
-![BI Report Full 2](https://github.com/taarikakanauji/bank-transactions-analysis/raw/main/images/BI-Report-Full-2.jpg)
+![BI Report Full 2](https://github.com/taarikakanauji/bank-transactions-analysis/raw/main/images/BI-Report-fraud.jpg)
 
 
 To identify and analyze fraudulent transactions by examining patterns across transaction types, bandwidth groups, network slices, and regions, enabling proactive fraud mitigation
@@ -246,7 +246,7 @@ This page consists of different types of visual indicators related to fraudulent
 
 # Transaction Details Page
 
-![BI Report Full 3](https://github.com/taarikakanauji/bank-transactions-analysis/raw/main/images/BI-Report-Full-3.jpg)
+![BI Report Full 3](https://github.com/taarikakanauji/bank-transactions-analysis/raw/main/images/BI-Report-detail.jpg)
 
 Analyze granular transaction data to detect fraud patterns in real-time, focusing on sender/receiver accounts, transaction types, bandwidth usage, and network slices.
 
