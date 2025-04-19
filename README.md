@@ -38,7 +38,7 @@ This dashboard helps stakeholders track and analyze banking transactions based o
 
     Q : Which geographic locations/states have the highest transactions and which need attention?
 
-    Q : How are the transations distributed throughout the time of day?
+    Q : How are the transactions distributed throughout the time of day?
 
     Q : What is total number of fraudulent transactions and its total amount?
 
@@ -48,7 +48,7 @@ This dashboard helps stakeholders track and analyze banking transactions based o
 
     Q : Which regions are recording the highest number of transactions?
 
-    Q : Which areas to focus on for impovements based on this data?
+    Q : Which areas to focus on for improvements based on this data?
 
 ## Steps followed 
 
@@ -111,7 +111,7 @@ As a Business Analyst for a leading banking organization, I was tasked with deve
 
         Y-Axis: Total Transactions
 
-   The chart revealed that the trasactions reach their peak around 10:30am and 11:00am, indicating the high usage during morning time. This insight suggests prioritizing system uptime during that time.
+   The chart revealed that the transactions reach their peak around 10:30am and 11:00am, indicating the high usage during morning time. This insight suggests prioritizing system uptime during that time.
 
   ![Timeline](https://github.com/taarikakanauji/bank-transactions-analysis/raw/main/images/time-%20line.jpg)
 
@@ -164,7 +164,7 @@ As a Business Analyst for a leading banking organization, I was tasked with deve
 
 - Step 13 : Implementing filters in the dashboard - To enhance user experience in our report, I implemented a set of 4 slicers for the user to filter data based on their requirement. They are easily accessible on the dashboard, in the top section.
 
-  Setting up slicers for interactive dynamic filtering - To ensure users could dynamically explore the data by interacing and filtering the entire report, I implemented slicers and these filters help in narrowing down the analysis to specific dimensions of interest.
+  Setting up slicers for interactive dynamic filtering - To ensure users could dynamically explore the data by interacting and filtering the entire report, I implemented slicers and these filters help in narrowing down the analysis to specific dimensions of interest.
 
   I added slicers for:
 
